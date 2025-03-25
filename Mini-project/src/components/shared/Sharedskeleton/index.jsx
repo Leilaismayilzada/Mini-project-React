@@ -12,7 +12,6 @@ const BlogCardSkeleton = () => {
           <span className="text-gray-500">•</span>
           <div className="h-3 w-20 bg-gray-600 rounded" />
         </div>
-
         <div className="h-6 w-3/4 bg-gray-500 rounded mb-2" />
         <div className="space-y-2 mb-4">
           <div className="h-4 w-full bg-gray-600 rounded" />

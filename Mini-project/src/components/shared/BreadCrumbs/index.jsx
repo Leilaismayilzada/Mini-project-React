@@ -3,7 +3,7 @@ import React from 'react'
 const Breadcrumbs = ({ items }) => {
   return (
     <nav aria-label="Breadcrumb">
-      <ol className="flex items-center  space-x-2 text-sm text-white">
+      <ol className="flex items-center  space-x-2 text-md text-white">
         {items.map((item, index) => {
           const isLast = index === items.length - 1
           return (
