@@ -1,0 +1,43 @@
+@keyframes rotate360 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(80deg);
+    }
+  }
+  
+  .section {
+    padding: 5rem 0;
+    color: white;
+  }
+  
+
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+  }
+  
+  .icon {
+    width: 120px;
+    height: auto;
+    opacity: 0.7;
+    animation: rotate360 3s linear infinite;
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  
+  p {
+    font-size: 0.95rem;
+    color: #cccccc;
+  }
+  

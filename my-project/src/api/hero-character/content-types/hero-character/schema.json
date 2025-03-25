@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hero_characters",
+  "info": {
+    "singularName": "hero-character",
+    "pluralName": "hero-characters",
+    "displayName": "HeroCharacter",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

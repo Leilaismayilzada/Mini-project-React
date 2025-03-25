@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ai_lastest_cards",
+  "info": {
+    "singularName": "ai-lastest-card",
+    "pluralName": "ai-lastest-cards",
+    "displayName": "AiLastestCard"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "date": {
+      "type": "date"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

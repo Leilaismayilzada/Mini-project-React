@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_rotate_step_sliders",
+  "info": {
+    "singularName": "home-rotate-step-slider",
+    "pluralName": "home-rotate-step-sliders",
+    "displayName": "HomeRotateStepSlider"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.title {
+  font-weight: 700;
+  text-transform: capitalize;
+  text-align: center;
+  padding-bottom: 5px;
+  color: rgb(70, 70, 70);
+  font-size: 37px;
+  line-height: 1.4;
+  max-width: 100%;
+
+  @media (max-width: 1024px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.3rem;
+  }
+}
+
+.span {
+  color: #99da93;
+}
+.img{
+display: flex;
+justify-content: center;
+margin-top: 20px;
+}
+

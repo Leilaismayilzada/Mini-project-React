@@ -1,0 +1,56 @@
+.planCard {
+    background: #000;
+    padding: 2rem;
+    border-radius: 10px;
+    color: white;
+    text-align: left;
+    transition: background 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+  
+    &:hover {
+      background: linear-gradient(180deg, #3124c9, #0000);
+      border: 1px solid #3124c9;
+    }
+  }
+  
+  .planIcon {
+    margin-bottom: 1rem;
+  }
+  
+  .planPrice {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  .planDesc {
+    font-size: 1rem;
+    color: #aaa;
+  }
+  
+  .planNote {
+    margin-bottom: 1.5rem;
+    color: #ccc;
+  }
+  
+  .planFeatureHeading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .planFeatureList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .planFeatureItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+  }
+  
