@@ -47,7 +47,7 @@ const Header = () => {
             <div className="hidden md:flex md:col-span-6 justify-center items-center text-white gap-6">
               <Link to="#home">Home</Link>
               <Link to="#about">About</Link>
-              <Link to="#services">Services</Link>
+              <Link to="/blogs">Blogs</Link>
               <Link to="#products">Products</Link>
               <Link to="#contact">Contact</Link>
             </div>
