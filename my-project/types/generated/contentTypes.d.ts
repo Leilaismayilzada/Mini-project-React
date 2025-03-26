@@ -404,6 +404,42 @@ export interface ApiAiLastestCardAiLastestCard
   };
 }
 
+export interface ApiBlogsCardsSectionBlogsCardsSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs_cards_sections';
+  info: {
+    description: '';
+    displayName: 'BlogsCardsSection';
+    pluralName: 'blogs-cards-sections';
+    singularName: 'blogs-cards-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Schema.Attribute.String;
+    comments: Schema.Attribute.BigInteger;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.Date;
+    excerpt: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::blogs-cards-section.blogs-cards-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'author'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHeroCharacterHeroCharacter
   extends Struct.CollectionTypeSchema {
   collectionName: 'hero_characters';
@@ -976,6 +1012,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::ai-lastest-card.ai-lastest-card': ApiAiLastestCardAiLastestCard;
+      'api::blogs-cards-section.blogs-cards-section': ApiBlogsCardsSectionBlogsCardsSection;
       'api::hero-character.hero-character': ApiHeroCharacterHeroCharacter;
       'api::home-rotate-step-slider.home-rotate-step-slider': ApiHomeRotateStepSliderHomeRotateStepSlider;
       'plugin::content-releases.release': PluginContentReleasesRelease;

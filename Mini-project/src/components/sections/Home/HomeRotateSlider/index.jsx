@@ -4,7 +4,7 @@ import HomeRotateStepSlider from '../../../shared/HomeRotateSliders/index';
 import { QueryKeys } from "../../../constant/QueryKeys";
 import { getAPIData } from "../../../../http/api";
 import { useQuery } from "@tanstack/react-query";
-import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/css";
 
 const RotateSlider = () => {
@@ -12,6 +12,7 @@ const RotateSlider = () => {
     queryKey: [QueryKeys.ROTATESTEPSLIDER],
     queryFn: () => getAPIData("home-rotate-step-sliders?populate=*"),
   });
+
 
   return (
     
@@ -26,18 +27,7 @@ const RotateSlider = () => {
           <img src="https://evoluxia-theme.myshopify.com/cdn/shop/files/Layer_1_8.png?v=1702631611&width=1500" alt="" />
         </div>
         
-  {data?.map((el, index) => (
-    <HomeRotateStepSlider
-      key={index}
-      image={
-        el.image?.url
-          ? `http://localhost:1337${el.image.url}`
-          : "https://via.placeholder.com/150"
-      }
-      title={el.title}
-      desc={el.desc}
-    />
-  ))}
+        <HomeRotateStepSlider slides={data}/>
 
 </div>
  </div>

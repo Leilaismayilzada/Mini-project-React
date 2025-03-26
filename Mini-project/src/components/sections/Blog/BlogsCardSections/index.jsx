@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import BlogCardSkeleton from '../../../shared/Sharedskeleton';
 import BlogCard from '../../../shared/BlogsCard';
 import { useQuery } from '@tanstack/react-query';
+import { Link } from 'react-router-dom';
 
 const PAGE_SIZE = 6;
 
@@ -47,6 +48,7 @@ const BlogListSection = () => {
               title={el.title}
               excerpt={el.excerpt}
               author={el.author}
+              id={el.slug}
               comments={el.comments}
             />
           ))}

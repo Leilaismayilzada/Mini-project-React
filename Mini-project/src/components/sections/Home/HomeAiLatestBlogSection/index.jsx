@@ -14,7 +14,7 @@ const HomeAiLatestBlogSection = () => {
     queryKey: [QueryKeys.AILASTESTCARDS],
     queryFn: () => getAPIData("ai-lastest-cards?populate=*")
   });
-  
+  console.log(data)
 
   return (
     <div className={style.section}>
@@ -31,8 +31,8 @@ const HomeAiLatestBlogSection = () => {
           <BlogCard
             key={index}
             date={el.date}
-            image={el.image?.url 
-              ? `http://localhost:1337${el.image.url}` 
+            image={el.image[0]?.url 
+              ? `http://localhost:1337${el.image[0].url}` 
               : "https://via.placeholder.com/150"}
             
             title={el.title}
@@ -49,13 +49,14 @@ const HomeAiLatestBlogSection = () => {
   spaceBetween={16}
   slidesPerView={1}
 >
+
   {data?.map((el, index) => (
     <SwiperSlide key={index}>
       <BlogCard
         date={el.date}
         image={
-          el.image?.url
-            ? `http://localhost:1337${el.image.url}`
+          el.image[0]?.url
+            ? `http://localhost:1337${el.image[0].url}`
             : "https://via.placeholder.com/150"
         }
         title={el.title}

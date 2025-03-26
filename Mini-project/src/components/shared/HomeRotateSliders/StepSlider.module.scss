@@ -12,7 +12,15 @@
     color: white;
   }
   
-
+  .swiper {
+    width: 100%;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+  
   
   .card {
     display: flex;

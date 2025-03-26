@@ -1,9 +1,12 @@
-import React from 'react'
-import GradientButton from '../ButtonGradient'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import GradientButton from '../ButtonGradient';
 
-const BlogCard = ({ image, date, author, comments, title, excerpt }) => {
+const BlogCard = ({ image, date, author, comments, title, excerpt, id }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className=" text-white rounded-xl overflow-hidden shadow-md">
+    <div className="text-white rounded-xl overflow-hidden shadow-md">
       <img src={image} alt={title} className="w-full h-[400px] object-cover" />
       <div className="p-5">
         <div className="flex flex-wrap items-center gap-2 text-sm text-white/70 mb-3">
@@ -24,10 +27,12 @@ const BlogCard = ({ image, date, author, comments, title, excerpt }) => {
 
         <p className="text-white/80 text-[15px] leading-relaxed mb-4">{excerpt}</p>
 
-        <GradientButton>Read More</GradientButton>
+        <GradientButton onClick={() => navigate(`/blogs/${id}`)}>
+          Read More
+        </GradientButton>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BlogCard
+export default BlogCard;

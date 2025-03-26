@@ -1,16 +1,15 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import styles from "./StepSlider.module.scss"
+import styles from "./StepSlider.module.scss";
 
-
-const HomeRotateStepSlider = ({title,img,desc}) => {
+const HomeRotateStepSlider = ({ slides }) => {
   return (
     <div className={styles.section}>
       <div className={styles.container}>
         <Swiper
-          spaceBetween={0}
-          slidesPerView={1}
+          spaceBetween={0} 
+          slidesPerView={1} 
           breakpoints={{
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
@@ -18,13 +17,15 @@ const HomeRotateStepSlider = ({title,img,desc}) => {
             1280: { slidesPerView: 4 },
           }}
         >
-            <SwiperSlide>
+          {slides?.map((slide, index) => (
+            <SwiperSlide key={index}>
               <div className={styles.card}>
-                <img src={img} alt={title} className={styles.icon} />
-                <h3>{title}</h3>
-                <p>{desc}</p>
+                <img src={`http://localhost:1337${slide.image?.url}`} alt={slide.title} className={styles.icon} />
+                <h3>{slide.title}</h3>
+                <p>{slide.desc}</p>
               </div>
             </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>
@@ -32,4 +33,3 @@ const HomeRotateStepSlider = ({title,img,desc}) => {
 };
 
 export default HomeRotateStepSlider;
-
