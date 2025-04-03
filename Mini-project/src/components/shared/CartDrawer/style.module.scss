@@ -1,0 +1,250 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+    z-index: 999;
+  }
+  
+  .show {
+    width: 100%;
+  }
+  
+  .drawer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 380px;
+    height: 100%;
+    background-color: #0a0a0a;
+    padding: 1.5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.6);
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  
+    button {
+      background: transparent;
+      color: white;
+      font-size: 1.5rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s ease;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+  .items {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 1.5rem;
+flex-direction: row;
+  
+    img {
+      width: 100px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  
+    div {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  
+      p:first-child {
+        
+        font-size: 1rem;
+        font-weight: 600;
+        color: #fff;
+        
+      }
+  
+      p:last-child {
+        
+        font-size: 0.95rem;
+        color: #7fff9e;
+        font-weight: 500;
+      }
+  
+      .quantity-control {
+        gap: 8px;
+        
+        margin-top: 8px;
+  
+        button {
+          background-color: #2626f3;
+          color: #fff;
+          border: none;
+          width: 24px;
+          height: 24px;
+          border-radius: 6px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: 0.2s;
+  
+          &:hover {
+            background-color: #5252ff;
+          }
+        }
+  
+        span {
+            
+          font-size: 1rem;
+          font-weight: 500;
+          color: #fff;
+          min-width: 20px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  
+  .subtotalSection {
+    border-top: 1px solid #444;
+    
+    padding-top: 1rem;
+    margin-top: 1rem;
+  
+    h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #7fff9e;
+      margin-bottom: 0.5rem;
+    }
+  
+    .price {
+        
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+    }
+  
+    .note {
+      font-size: 0.85rem;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+  
+    .checkoutBtn,
+    .viewCartBtn {
+      width: 100%;
+      padding: 10px;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+  
+    .checkoutBtn {
+      background: linear-gradient(to right, #5f5aff, #ae49ff);
+      color: white;
+      margin-bottom: 10px;
+  
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  
+    .viewCartBtn {
+      background: white;
+      color: black;
+  
+      &:hover {
+        background: #eee;
+      }
+    }
+  }
+
+  .quantity1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1e1e1e;
+    border: 1.5px solid #b60000;
+    border-radius: 10px;
+    padding: 6px 16px;
+    gap: 16px;
+    width: fit-content;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    transition: border 0.3s ease;
+  }
+  
+  .quantity1:hover {
+    border: 1.5px solid #7f5af0;
+  }
+  
+  .quantity1decrement,
+  .quantity1increment {
+    background-color: #2a2a2a;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+  
+  .quantity1decrement:hover,
+  .quantity1increment:hover {
+    background-color: #000658;
+    transform: scale(1.1);
+  }
+  
+  .quantity1span {
+    min-width: 28px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background-color: #292929;
+    user-select: none;
+  }
+  .quantity1remove {
+    background-color: transparent;
+    border: none;
+    font-size: 22px;
+    color: #fff;
+    cursor: pointer;
+    margin-left: auto;
+    transition: transform 0.2s ease, color 0.2s ease;
+  
+    &:hover {
+      color: #ff4d4d;
+      transform: scale(1.2);
+    }
+  }
+  
+  

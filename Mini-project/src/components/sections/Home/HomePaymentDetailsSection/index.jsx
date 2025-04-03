@@ -7,6 +7,7 @@ const HomePaymentDetailsSection = () => {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <PlanCard
           icon="https://evoluxia-theme.myshopify.com/cdn/shop/files/Layer_1_5.png?v=1702532057&width=1500"
+          alt="Free Plan Icon"
           price="Free"
           title="/MONTH"
           description="7 Days Trial Pack"
@@ -18,11 +19,12 @@ const HomePaymentDetailsSection = () => {
             { text: "Nunc at vodsd lutp bero.", included: false },
             { text: "Racoon oombu", included: false },
           ]}
+          
         />
 
         <PlanCard
-          className="mt-[60px]"
           icon="https://evoluxia-theme.myshopify.com/cdn/shop/files/Layer_1_11.png?v=1703566922&width=1500"
+          alt="Standard Plan Icon"
           price="$39"
           title="/MONTH"
           description=""
@@ -34,10 +36,12 @@ const HomePaymentDetailsSection = () => {
             { text: "Nunc at vodsd lutp bero.", included: false },
             { text: "Racoon oombu", included: false },
           ]}
+      
         />
 
         <PlanCard
           icon="https://evoluxia-theme.myshopify.com/cdn/shop/files/Layer_1_6.png?v=1702543380&width=1500"
+          alt="Premium Plan Icon"
           price="$49"
           title="/MONTH"
           description=""

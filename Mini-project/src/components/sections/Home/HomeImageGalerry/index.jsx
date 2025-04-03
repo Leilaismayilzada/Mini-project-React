@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./style.module.scss";
 import GradientButton from "../../../shared/ButtonGradient";
+import { Link } from "react-router-dom";
 
 const HomeImageGallery = () => {
   return (
@@ -47,8 +48,9 @@ const HomeImageGallery = () => {
             pulvinar mattis nunc sed blandit libero. Congue eu consequat ac
             felis donec et odio pellentesque.
           </p>
-          <GradientButton> Shop Now</GradientButton>
-        </div>
+          <Link to="/shop">
+  <GradientButton>Shop Now</GradientButton>
+</Link>        </div>
       </div>
     </div>
   );

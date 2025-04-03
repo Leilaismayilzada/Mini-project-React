@@ -4,24 +4,26 @@
   "info": {
     "singularName": "home-rotate-step-slider",
     "pluralName": "home-rotate-step-sliders",
-    "displayName": "HomeRotateStepSlider"
+    "displayName": "HomeRotateStepSlider",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
+    "title": {
+      "type": "string"
+    },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "title": {
-      "type": "string"
+      ]
     },
     "desc": {
       "type": "string"

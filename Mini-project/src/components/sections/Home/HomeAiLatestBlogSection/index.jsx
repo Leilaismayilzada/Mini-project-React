@@ -28,17 +28,20 @@ const HomeAiLatestBlogSection = () => {
 
         <div className="hidden md:grid grid-cols-1 md:grid-cols-3">
         {data?.map((el, index) => (
-          <BlogCard
-            key={index}
-            date={el.date}
-            image={el.image[0]?.url 
-              ? `http://localhost:1337${el.image[0].url}` 
-              : "https://via.placeholder.com/150"}
-            
-            title={el.title}
-            description={el.description}
-          />
-        ))}
+    <SwiperSlide key={index}>
+      <BlogCard
+        date={el.date}
+        image={
+          el.image?.url
+            ? `http://localhost:1337${el.image?.url}`
+            : "https://via.placeholder.com/150"
+        }
+        title={el.title}
+        id={el.slug}
+        description={el.description}
+      />
+    </SwiperSlide>
+  ))}
         </div>
         <div className="md:hidden">
         <Swiper
@@ -55,8 +58,8 @@ const HomeAiLatestBlogSection = () => {
       <BlogCard
         date={el.date}
         image={
-          el.image[0]?.url
-            ? `http://localhost:1337${el.image[0].url}`
+          el.image?.url
+            ? `http://localhost:1337${el.image?.url}`
             : "https://via.placeholder.com/150"
         }
         title={el.title}

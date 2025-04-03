@@ -28,14 +28,14 @@
     "author": {
       "type": "string"
     },
+    "comments": {
+      "type": "integer"
+    },
     "title": {
       "type": "string"
     },
     "excerpt": {
       "type": "string"
-    },
-    "comments": {
-      "type": "biginteger"
     },
     "slug": {
       "type": "uid",

@@ -373,6 +373,7 @@ export interface ApiAiLastestCardAiLastestCard
   extends Struct.CollectionTypeSchema {
   collectionName: 'ai_lastest_cards';
   info: {
+    description: '';
     displayName: 'AiLastestCard';
     pluralName: 'ai-lastest-cards';
     singularName: 'ai-lastest-card';
@@ -386,10 +387,7 @@ export interface ApiAiLastestCardAiLastestCard
       Schema.Attribute.Private;
     date: Schema.Attribute.Date;
     description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -397,6 +395,7 @@ export interface ApiAiLastestCardAiLastestCard
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -418,7 +417,7 @@ export interface ApiBlogsCardsSectionBlogsCardsSection
   };
   attributes: {
     author: Schema.Attribute.String;
-    comments: Schema.Attribute.BigInteger;
+    comments: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -433,6 +432,35 @@ export interface ApiBlogsCardsSectionBlogsCardsSection
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'author'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
+  collectionName: 'categories';
+  info: {
+    description: '';
+    displayName: 'Category';
+    pluralName: 'categories';
+    singularName: 'category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -475,6 +503,7 @@ export interface ApiHomeRotateStepSliderHomeRotateStepSlider
   extends Struct.CollectionTypeSchema {
   collectionName: 'home_rotate_step_sliders';
   info: {
+    description: '';
     displayName: 'HomeRotateStepSlider';
     pluralName: 'home-rotate-step-sliders';
     singularName: 'home-rotate-step-slider';
@@ -494,6 +523,73 @@ export interface ApiHomeRotateStepSliderHomeRotateStepSlider
       'api::home-rotate-step-slider.home-rotate-step-slider'
     > &
       Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProductSliderSectionProductSliderSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'product_slider_sections';
+  info: {
+    displayName: 'ProductSliderSection';
+    pluralName: 'product-slider-sections';
+    singularName: 'product-slider-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product-slider-section.product-slider-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProductTotalProductTotal
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'product_totals';
+  info: {
+    description: '';
+    displayName: 'ProductTotal';
+    pluralName: 'product-totals';
+    singularName: 'product-total';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hoverImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    isSoldOut: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product-total.product-total'
+    > &
+      Schema.Attribute.Private;
+    price: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -1013,8 +1109,11 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::ai-lastest-card.ai-lastest-card': ApiAiLastestCardAiLastestCard;
       'api::blogs-cards-section.blogs-cards-section': ApiBlogsCardsSectionBlogsCardsSection;
+      'api::category.category': ApiCategoryCategory;
       'api::hero-character.hero-character': ApiHeroCharacterHeroCharacter;
       'api::home-rotate-step-slider.home-rotate-step-slider': ApiHomeRotateStepSliderHomeRotateStepSlider;
+      'api::product-slider-section.product-slider-section': ApiProductSliderSectionProductSliderSection;
+      'api::product-total.product-total': ApiProductTotalProductTotal;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

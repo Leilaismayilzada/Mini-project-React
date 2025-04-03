@@ -6,6 +6,7 @@
   margin: 0 auto;
   padding: 10px;
   width: 100%;
+  height: 800px;
 }
 .wrapper1 {
   position: relative;
@@ -55,7 +56,6 @@ right: 130px;
 }
 .content {
     position: relative;
-    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -84,9 +84,7 @@ right: 130px;
   }
   
   @media (max-width: 928px) {
-    .wrapper1,
-    .wrapper2,
-    .wrapper3 {
+    .wrapper1, .wrapper2, .wrapper3 {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -94,11 +92,7 @@ right: 130px;
       margin: 0 auto;
     }
   
-    .mountain,
-    .girly,
-    .owl,
-    .guy,
-    .robots {
+    .mountain, .girly, .owl, .guy, .robots {
       position: static;
       margin: 1rem auto;
       width: 90%;
@@ -121,5 +115,37 @@ right: 130px;
       }
     }
   }
-
+  
+  @media (max-width: 480px) {
+    .wrapper1, .wrapper2, .wrapper3 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: static;
+      margin: 0 auto;
+    }
+  
+    .mountain, .girly, .owl, .guy, .robots {
+      position: static;
+      margin: 1rem auto;
+      width: 90%;
+      max-width: 250px;
+    }
+  
+    .content {
+      position: static;
+      transform: none;
+      padding: 1.5rem 1rem;
+      text-align: center;
+  
+      h2 {
+        font-size: 1.6rem;
+      }
+  
+      p {
+        font-size: 0.9rem;
+        margin: 1rem 0 1.5rem;
+      }
+    }
+  }
   

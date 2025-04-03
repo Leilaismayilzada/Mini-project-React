@@ -11,6 +11,9 @@
     "draftAndPublish": true
   },
   "attributes": {
+    "title": {
+      "type": "string"
+    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -21,9 +24,6 @@
         "videos",
         "audios"
       ]
-    },
-    "title": {
-      "type": "string"
     }
   }
 }

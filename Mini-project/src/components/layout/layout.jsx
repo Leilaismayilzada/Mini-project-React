@@ -1,18 +1,35 @@
-import React from 'react'
-import Header from './Header/Header'
-import Footer from './Footer/Footer'
-import { Outlet } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import CartDrawer from '../shared/CartDrawer';
+import { Outlet } from 'react-router-dom';
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
 
 const Layout = () => {
+  const [cartItems, setCartItems] = useState([]);
+  const [cartOpen, setCartOpen] = useState(false);
+
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    setCartItems(storedCart);
+  }, []);
   return (
-    <div>
-      <Header />
-      <main >
-        <Outlet />
+    <>
+      <Header cartItems={cartItems} setCartOpen={setCartOpen} />
+      <CartDrawer
+        isOpen={cartOpen}
+        onClose={() => setCartOpen(false)}
+        cartItems={cartItems}
+        setCartItems={setCartItems}
+      />
+      <main>
+        <Outlet context={{ cartItems, setCartItems, setCartOpen }} />
       </main>
       <Footer />
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default Layout
+export default Layout;
+
+
+

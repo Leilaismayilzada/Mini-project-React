@@ -6,9 +6,9 @@
   .desktopGrid {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap; // 🔸 Tək sətirə zorla
-    gap: 0;             // 🔸 Aralıqsız
-    overflow-x: auto;   // 🔸 Ekrana sığmasa scroll (istəyə görə)
+    flex-wrap: nowrap; 
+    gap: 0;             
+    overflow-x: auto;   
   }
   
   .mobileSlider {

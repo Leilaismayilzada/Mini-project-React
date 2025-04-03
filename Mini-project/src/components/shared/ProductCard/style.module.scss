@@ -1,0 +1,165 @@
+.cardWrapper {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+  
+    &.list {
+      width: 100%;
+  
+      .card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1rem;
+        width: 100%;
+      }
+  
+      .imageWrapper {
+        flex: 0 0 200px;
+        height: 200px;
+      }
+  
+      .content {
+        align-items: flex-start;
+        text-align: left;
+        margin-left: 40px;
+  
+        .title {
+          font-size: 35px;
+        }
+  
+        .price {
+          font-size: 20px;
+        }
+      }
+  
+      .actions {
+        top: 1rem;
+        right: 1rem;
+      }
+    }
+  }
+  
+  .card {
+    background-color: #1b1b1b;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 350px;
+    height: 350px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    cursor: pointer;
+  
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 12px rgba(0, 255, 204, 0.3);
+  
+      .hoverImage {
+        opacity: 1;
+      }
+  
+      .primaryImage {
+        opacity: 0;
+      }
+    }
+  
+    &:hover .actions,
+    .actions:hover {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 8px;
+  }
+  
+  .primaryImage {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  .hoverImage {
+    opacity: 0;
+    z-index: 2;
+  }
+  
+  .soldOut {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: white;
+    color: black;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    z-index: 3;
+    font-weight: bold;
+  }
+  
+  .actions {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  z-index: 9999;
+    button {
+      background-color: #3b3bff;
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      color: white;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      &:hover {
+        background-color: #0000c3;
+      }
+    }
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    .title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+  
+    .price {
+      color: #7fff9e;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+  

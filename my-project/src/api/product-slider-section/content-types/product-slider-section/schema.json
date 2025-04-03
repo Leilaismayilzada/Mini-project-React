@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_slider_sections",
+  "info": {
+    "singularName": "product-slider-section",
+    "pluralName": "product-slider-sections",
+    "displayName": "ProductSliderSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
