@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import BlogCard from "../../../shared/AiLatestCard";
 import style from "../../../shared/AiLatestCard/style.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,13 +8,14 @@ import "swiper/css/pagination";
 import { useQuery } from "@tanstack/react-query";
 import { QueryKeys } from "../../../constant/QueryKeys";
 import { getAPIData } from "../../../../http/api";
+import BlogDetailContent from "../../BlogDetails/MainPage/Blogteail";
 
 const HomeAiLatestBlogSection = () => {
   const { data } = useQuery({
     queryKey: [QueryKeys.AILASTESTCARDS],
-    queryFn: () => getAPIData("ai-lastest-cards?populate=*")
+    queryFn: () => getAPIData("ai-lastest-cards?populate=*"),
   });
-  console.log(data)
+
 
   return (
     <div className={style.section}>
@@ -26,56 +27,56 @@ const HomeAiLatestBlogSection = () => {
           <h2 className="text-white text-3xl font-bold">Latest AI Blog</h2>
         </div>
 
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-3">
-        {data?.map((el, index) => (
-    <SwiperSlide key={index}>
-      <BlogCard
-        date={el.date}
-        image={
-          el.image?.url
-            ? `http://localhost:1337${el.image?.url}`
-            : "https://via.placeholder.com/150"
-        }
-        title={el.title}
-        id={el.slug}
-        description={el.description}
-      />
-    </SwiperSlide>
-  ))}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-3 px-6">
+          {data?.map((el, index) => (
+            <BlogCard
+              key={index}
+              date={el.date}
+              image={
+                el.image?.url
+                  ? `http://localhost:1337${el.image?.url}`
+                  : "https://via.placeholder.com/150"
+              }
+              title={el.title}
+              description={el.description}
+              id={el.slug}
+              onClick={() => handleCardClick(el)}
+            />
+          ))}
         </div>
-        <div className="md:hidden">
-        <Swiper
-  modules={[Autoplay, Pagination]}
-  autoplay={{ delay: 2500 }}
-  pagination={{ clickable: true }}
-  loop={true}
-  spaceBetween={16}
-  slidesPerView={1}
->
 
-  {data?.map((el, index) => (
-    <SwiperSlide key={index}>
-      <BlogCard
-        date={el.date}
-        image={
-          el.image?.url
-            ? `http://localhost:1337${el.image?.url}`
-            : "https://via.placeholder.com/150"
-        }
-        title={el.title}
-        description={el.description}
-      />
-    </SwiperSlide>
-  ))}
-</Swiper>
-
+        <div className="md:hidden px-4">
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            autoplay={{ delay: 2500 }}
+            pagination={{ clickable: true }}
+            loop={true}
+            spaceBetween={16}
+            slidesPerView={1}
+          >
+            {data?.map((el, index) => (
+              <SwiperSlide key={index}>
+                <BlogCard
+                  date={el.date}
+                  image={
+                    el.image?.url
+                      ? `http://localhost:1337${el.image?.url}`
+                      : "https://via.placeholder.com/150"
+                  }
+                  title={el.title}
+                  description={el.description}
+                  id={el.slug}
+                  onClick={() => handleCardClick(el)}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
+
+       
       </div>
     </div>
   );
 };
-
-
-   
 
 export default HomeAiLatestBlogSection;

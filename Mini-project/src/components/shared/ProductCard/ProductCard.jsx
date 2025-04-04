@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { FaSyncAlt, FaShoppingCart, FaHeart } from "react-icons/fa";
 import styles from "./style.module.scss";
 
@@ -11,14 +12,23 @@ const ProductCard = ({
   isSoldOut,
   onAddToCart,
   onToggleWishlist,
-  isInWishlist
+  isInWishlist,
+  id
 }) => {
   const isList = layout === "list";
+  const navigate = useNavigate();
 
   return (
     <div className={`${styles.cardWrapper} ${isList ? styles.list : ""}`}>
       <div className={styles.card}>
-        <div className={styles.imageWrapper}>
+        <div
+          className={styles.imageWrapper}
+          onClick={(e) => {
+            e.stopPropagation(); 
+            navigate(`/shop/${id}`);
+          }}
+          style={{ cursor: "pointer" }}
+        >
           <img
             src={image}
             alt={title}
@@ -32,7 +42,7 @@ const ProductCard = ({
 
           {isSoldOut && <div className={styles.soldOut}>SOLD OUT</div>}
 
-          <div className={styles.actions}>
+          <div className={styles.actions} onClick={(e) => e.stopPropagation()}>
             <button><FaSyncAlt /></button>
             {!isSoldOut && (
               <button onClick={onAddToCart}><FaShoppingCart /></button>

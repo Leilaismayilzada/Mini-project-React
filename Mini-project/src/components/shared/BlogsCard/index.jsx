@@ -27,9 +27,10 @@ const BlogCard = ({ image, date, author, comments, title, excerpt, id }) => {
 
         <p className="text-white/80 text-[15px] leading-relaxed mb-4">{excerpt}</p>
 
-        <GradientButton onClick={() => navigate(`/blogs/${id}`)}>
+        <GradientButton   onClick={() => navigate(`/blogs/${id}`)}>
           Read More
-        </GradientButton>
+        </GradientButton> 
+
       </div>
     </div>
   );

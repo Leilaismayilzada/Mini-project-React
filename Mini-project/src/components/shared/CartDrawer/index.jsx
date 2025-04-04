@@ -108,10 +108,11 @@ const CartDrawer = ({ isOpen, onClose, cartItems, setCartItems }) => {
               <p className="text-sm text-gray-300 mb-4">
                 Taxes and shipping calculated at checkout
               </p>
-              <button className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white py-2 px-4 rounded-full w-full mb-2">
+       <Link to="/checkout">
+       <button className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white py-2 px-4 rounded-full w-full mb-2">
                 Check Out
-              </button>
-           
+              </button></Link>
+              
               <Link
   to="/cart"
   className="bg-white text-black py-2 px-4 rounded-full w-full text-center block"

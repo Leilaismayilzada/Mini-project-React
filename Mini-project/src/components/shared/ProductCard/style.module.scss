@@ -163,3 +163,47 @@
     }
   }
   
+  .cardWrapper {
+    display: flex;
+    justify-content: center; // ✅ center in row
+    width: 100%;
+    margin: 0 auto; // ✅ ensures centering inside grid cells
+  
+    &.list {
+      width: 100%;
+  
+      .card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1rem;
+        width: 100%;
+      }
+  
+      .imageWrapper {
+        flex: 0 0 200px;
+        height: 200px;
+      }
+  
+      .content {
+        align-items: flex-start;
+        text-align: left;
+        margin-left: 40px;
+  
+        .title {
+          font-size: 35px;
+        }
+  
+        .price {
+          font-size: 20px;
+        }
+      }
+  
+      .actions {
+        top: 1rem;
+        right: 1rem;
+      }
+    }
+  }
+  
