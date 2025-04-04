@@ -69,7 +69,6 @@ const BlogDetailContent = ({ blog, onAddToCart }) => {
 
   return (
     <div className="text-white min-h-screen px-6 py-10 md:px-16 flex flex-col md:flex-row gap-10">
-      {/* Left - Image */}
       <div className="flex-1 flex flex-col items-center relative">
         <div
           className="overflow-hidden rounded-xl w-full max-w-md mb-6 group"
@@ -99,7 +98,6 @@ const BlogDetailContent = ({ blog, onAddToCart }) => {
         </div>
       </div>
 
-      {/* Right - Info */}
       <div className="flex-1 max-w-xl">
         <p className="text-green-400 text-sm mb-2">{title}</p>
         <h1 className="text-3xl font-bold mb-4">{title}</h1>
@@ -136,7 +134,6 @@ const BlogDetailContent = ({ blog, onAddToCart }) => {
           <p className="font-medium">Rs. {price * quantity}</p>
         </div>
 
-        {/* Quantity + Stock */}
         <div className="flex items-center gap-4 mb-6">
           <button onClick={handleSubtract} className="bg-gray-800 text-white px-4 py-2 rounded-full">-</button>
           <span>{quantity}</span>
@@ -150,7 +147,6 @@ const BlogDetailContent = ({ blog, onAddToCart }) => {
           </span>
         </div>
 
-        {/* Add to Cart */}
         {isAvailable ? (
           <GradientButton onClick={handleAddToCart} className="w-full py-3 rounded-lg mb-6">
             Add to Cart
@@ -160,11 +156,10 @@ const BlogDetailContent = ({ blog, onAddToCart }) => {
             disabled
             className="w-full bg-gray-800 text-gray-400 font-semibold py-3 rounded-lg mb-6 cursor-not-allowed border border-gray-600 tracking-wider"
           >
-            🔒 Sold Out
+           <i class="ri-git-repository-private-line"></i> Sold Out
           </button>
         )}
 
-        {/* Wishlist */}
         <button
           onClick={() =>
             handleToggleWishlist({
@@ -194,18 +189,12 @@ const BlogDetailContent = ({ blog, onAddToCart }) => {
             : "Add to Wishlist"}
         </button>
 
-        {/* Info */}
         <div className="text-sm text-gray-400 space-y-2 mb-6">
-          <p>📦 Estimated delivery: 5–7 Days from order date.</p>
-          <p>🚚 Free Shipping & Returns: On orders above $79</p>
+          <p><i class="ri-shopping-bag-line"></i> Estimated delivery: 5–7 Days from order date.</p>
+          <p><i class="ri-caravan-line"></i>Free Shipping & Returns: On orders above $79</p>
         </div>
 
-        <div className="bg-gray-800 text-sm p-4 rounded-md">
-          Let us know about your query!
-          <a href="/contact" className="text-indigo-400 underline ml-1">
-            CONTACT US
-          </a>
-        </div>
+        
       </div>
     </div>
   );

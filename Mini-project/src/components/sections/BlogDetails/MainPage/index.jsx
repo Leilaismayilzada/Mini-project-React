@@ -25,11 +25,6 @@ const Main = () => {
 
   const blog = blogData?.[0];
 
-  if (isLoadingMain || isLoadingAI)
-    return <p className="text-center text-gray-500 text-lg">Loading...</p>;
-  if (errorMain || errorAI)
-    return <p className="text-center text-red-500 text-lg">Error loading blog(s).</p>;
-
   return (
     <>
       <div className="flex flex-col items-center justify-center text-center p-9 bg-gradient-to-b from-[#0d4249] via-black to-[#3b0e49]">
