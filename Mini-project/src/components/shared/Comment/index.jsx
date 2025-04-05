@@ -10,7 +10,6 @@ const CommentSection = () => {
     message: "",
   });
 
-  // Load comments from localStorage when component mounts
   useEffect(() => {
     const storedComments = localStorage.getItem("blog-comments");
     if (storedComments) {

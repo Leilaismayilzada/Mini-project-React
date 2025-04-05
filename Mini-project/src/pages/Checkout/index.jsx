@@ -21,7 +21,6 @@ const CheckoutPage = () => {
   };
 
   const handlePlaceOrder = () => {
-    // Here you’d send data to server or payment gateway
     console.log("Order Placed:", formData, cartItems);
     setCartItems([]);
     localStorage.removeItem("cartItems");
@@ -43,7 +42,6 @@ const CheckoutPage = () => {
       <h1 className="text-3xl font-bold mb-6 text-center">Checkout</h1>
 
       <div className="grid md:grid-cols-2 gap-12">
-        {/* Left - Billing Info */}
         <div>
           <h2 className="text-xl font-semibold mb-4">Billing Information</h2>
           <div className="space-y-4">
@@ -72,7 +70,6 @@ const CheckoutPage = () => {
           </div>
         </div>
 
-        {/* Right - Order Summary */}
         <div>
           <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
           <div className="space-y-2 mb-4">

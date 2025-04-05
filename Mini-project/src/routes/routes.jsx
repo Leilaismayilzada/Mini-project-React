@@ -7,7 +7,6 @@ import ShopPage from "../pages/Shop";
 import WishlistPage from "../pages/Whishlist";
 import CartPage from "../pages/ShopCard";
 import AiBlogDetailPage from "../components/sections/Home/HomeDetails/AIBlog";
-import ProductDetail from "../components/shared/ShopDetails";
 import ShopDetailsPage from "../pages/ShopDetails";
 import CheckoutPage from "../pages/Checkout";
 import ThankYouPage from "../pages/Congs";

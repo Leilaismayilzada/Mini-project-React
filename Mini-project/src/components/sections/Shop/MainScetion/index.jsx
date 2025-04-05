@@ -149,7 +149,6 @@ const MainSection = () => {
             </AnimatePresence>
           </div>
 
-          {/* Trending Section */}
           <div className="text-white mt-6 bg-[#111217] p-4 md:p-6 rounded-2xl shadow-md w-full text-center space-y-4">
             <h2 className="text-2xl font-semibold">🔥 Trending</h2>
             <div className="rounded-xl overflow-hidden">
@@ -159,9 +158,7 @@ const MainSection = () => {
           </div>
         </div>
 
-        {/* Product Section */}
         <div className="col-span-12 md:col-span-9 order-2 md:order-1">
-          {/* Sort Controls */}
           <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
             <p className="text-white text-lg">Showing 1–{sortedData.length || 0} of {sortedData.length || 0} Results</p>
             <div className="flex gap-2">
@@ -179,7 +176,6 @@ const MainSection = () => {
             </select>
           </div>
 
-          {/* Product Cards */}
           <AnimatePresence mode="wait">
             <motion.div key={layout} className={`grid ${layoutClass} gap-6`} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}>
               {loading

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 const ThankYouPage = () => {
   const location = useLocation();
-  const { orderData } = location.state || {}; // name, email, address, cartItems
+  const { orderData } = location.state || {}; 
 
   const [summary, setSummary] = useState([]);
 
@@ -23,7 +23,6 @@ const ThankYouPage = () => {
           <p className="text-gray-400">Your order has been placed successfully.</p>
         </div>
 
-        {/* Order Info */}
         {orderData && (
           <div className="space-y-2 text-sm">
             <p><span className="text-gray-500">👤 Name:</span> {orderData.name}</p>
@@ -31,8 +30,6 @@ const ThankYouPage = () => {
             <p><span className="text-gray-500">🏠 Address:</span> {orderData.address}</p>
           </div>
         )}
-
-        {/* Cart Summary */}
         <div className="border-t border-gray-700 pt-4">
           <h2 className="text-lg font-semibold mb-2 text-white">🛍️ Order Summary:</h2>
           <div className="space-y-1 text-sm text-gray-300">

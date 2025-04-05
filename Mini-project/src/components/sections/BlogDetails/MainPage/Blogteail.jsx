@@ -8,7 +8,7 @@ const BlogDetailContent = ({ blog }) => {
     <div className={styles.card}>
       <img
         src={
-          blog?.image?.url
+          blog?.image.url
             ? `http://localhost:1337${blog.image.url}`
             : "https://via.placeholder.com/800x400"
         }

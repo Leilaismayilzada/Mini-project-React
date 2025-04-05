@@ -24,7 +24,6 @@ const BlogDetailContent = ({ blog, onAddToCart }) => {
   const [transformOrigin, setTransformOrigin] = useState("center");
   const [selectedRatio, setSelectedRatio] = useState("4:3");
 
-  // Set image based on selected ratio
   const imageUrl =
     selectedRatio === "4:3"
       ? image?.url

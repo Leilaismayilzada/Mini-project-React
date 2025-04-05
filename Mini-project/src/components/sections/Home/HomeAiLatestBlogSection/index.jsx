@@ -27,7 +27,7 @@ const HomeAiLatestBlogSection = () => {
           <h2 className="text-white text-3xl font-bold">Latest AI Blog</h2>
         </div>
 
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-3 px-6">
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-3 ">
           {data?.map((el, index) => (
             <BlogCard
               key={index}

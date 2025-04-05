@@ -165,9 +165,9 @@
   
   .cardWrapper {
     display: flex;
-    justify-content: center; // ✅ center in row
+    justify-content: center; 
     width: 100%;
-    margin: 0 auto; // ✅ ensures centering inside grid cells
+    margin: 0 auto; 
   
     &.list {
       width: 100%;
